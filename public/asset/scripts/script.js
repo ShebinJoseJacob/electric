@@ -3,14 +3,14 @@ var InitialCount = -1;
 
 
 const deleteProducts = async() => {
-    url = 'https://autocart-l1hg.onrender.com/product';
+    url = 'https://autobill-electric.onrender.com/product';
 
     let res = await axios.get(url);
     responseText = res.data;
     const products = responseText;
 
     for (let product of products) {
-        const response = await axios.delete(`https://autocart-l1hg.onrender.com/product/${product.id}`)
+        const response = await axios.delete(`https://autobill-electric.onrender.com/product/${product.id}`)
 
     }
     location.reload();
@@ -22,7 +22,7 @@ const deleteProducts = async() => {
 }
 
 const loadProducts = async() => {
-    url = 'https://autocart-l1hg.onrender.com/product';
+    url = 'https://autobill-electric.onrender.com/product';
 
     let res = await axios.get(url);
     responseText = await res.data;
@@ -79,7 +79,7 @@ const loadProducts = async() => {
 var checkout = async() => {
     document.getElementById('2').innerHTML = "<span class='loader-16' style='margin-left: 44%;'></span>"
     var payable = 0;
-    url = 'https://autocart-l1hg.onrender.com/product';
+    url = 'https://autobill-electric.onrender.com/product';
 
     let res = await axios.get(url);
     responseText = await res.data;
@@ -89,7 +89,7 @@ var checkout = async() => {
         payable = payable + parseFloat(product.payable);
     }
 
-    var url = "https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpa%3Dshebinjosejacob2014%40oksbi%26pn%3DTXN00118822110%26tn%3DA%26am%3D4%26cu%3DINR%26url%3Dhttps%3A%2F%2Fautocart-l1hg.onrender.com%2F&dark=23a5e7&ecLevel=H&size=400&light=ecf0f3";
+    var url = "https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpa%3Dshebinjosejacob2014%40oksbi%26pn%3DTXN00118822110%26tn%3DA%26am%3D4%26cu%3DINR%26url%3Dhttps%3A%2F%2Fautobill-electric.onrender.com%2F&dark=23a5e7&ecLevel=H&size=400&light=ecf0f3";
 
     await fetch(url)
         .then(function(data) {
